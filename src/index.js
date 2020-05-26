@@ -27,11 +27,11 @@ const builder = jsonData => {
     .attr("data-fips", d => d.id)
     .attr(
       "data-education",
-      d => jsonData[0].filter(data => data.fips == d.id)[0].bachelorsOrHigher
+      d => jsonData[0].filter(data => data.fips === d.id)[0].bachelorsOrHigher
     )
     .attr("d", d3.geoPath())
     .style("fill", d =>
-      color(jsonData[0].filter(data => data.fips == d.id)[0].bachelorsOrHigher)
+      color(jsonData[0].filter(data => data.fips === d.id)[0].bachelorsOrHigher)
     )
     .on("mouseover", d => {
       tooltip
